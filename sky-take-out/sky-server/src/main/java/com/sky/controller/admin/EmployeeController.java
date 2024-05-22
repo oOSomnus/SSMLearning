@@ -92,6 +92,20 @@ public class EmployeeController {
     }
 
     /**
+     * 启用禁用员工
+     *
+     * @param employeeDTO
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    @ApiOperation("启用禁用")
+    public Result startOrStop(@PathVariable Integer status, Long id) {
+        log.info("启动禁用账号:{},{}", status, id);
+        employeeService.startOrStop(status, id);
+        return Result.success();
+    }
+
+    /**
      * 退出
      *
      * @return

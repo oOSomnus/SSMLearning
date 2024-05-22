@@ -40,4 +40,12 @@ public interface EmployeeMapper {
             "#{phone},#{sex},#{idNumber},#{status}," +
             "#{createTime},#{updateTime},#{createUser}, #{updateUser})")
     void insert(Employee employee);
+
+
+    /**
+     * 员工更新
+     *
+     * @param employee
+     */
+    void update(Employee employee);
 }
