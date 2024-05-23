@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RestController("adminShopController")
-@RequestMapping("/admin/shop")
+@RequestMapping("/admin/shop/status")
 @Api(tags = "shop interface")
 @Slf4j
 public class ShopController {
@@ -19,9 +19,9 @@ public class ShopController {
 
     @PutMapping("/{status}")
     @ApiOperation("shop status setting")
-    public Result setStatus(@PathVariable Integer Status) {
+    public Result setStatus(@PathVariable Integer status) {
         log.info("Setting shop status ... ");
-        redisTemplate.opsForValue().set("SHOP_STATUS", Status);
+        redisTemplate.opsForValue().set("SHOP_STATUS", status);
         return Result.success();
     }
 

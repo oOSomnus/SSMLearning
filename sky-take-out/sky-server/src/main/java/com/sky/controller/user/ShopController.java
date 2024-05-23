@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController("userShopController")
-@RequestMapping("/user/shop")
+@RequestMapping("/user/shop/status")
 @Api(tags = "shop interface")
 @Slf4j
 public class ShopController {
@@ -19,7 +19,7 @@ public class ShopController {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @GetMapping
+    @GetMapping()
     @ApiOperation("Get shop status")
     public Result<Integer> getStatus() {
         log.info("Get shop status");
